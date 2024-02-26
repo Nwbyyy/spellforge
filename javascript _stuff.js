@@ -56,4 +56,11 @@ function dropHandler(ev) {
     }
   }
 
+  for(x of document.getElementsByClassName("spell"))
+    if (!(spells.includes(" " + x.innerText))) {
+      x.draggable = false;
+    }
+    else {
+      x.draggable = true;
+    }
 }

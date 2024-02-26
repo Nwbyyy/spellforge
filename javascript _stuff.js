@@ -1,4 +1,4 @@
-var spellids = [" Alarm (VSM)", " Burning Hands (VS)", " Cloud of Daggers (VSM)", " Crown of Madness(VS)"];
+var spells = [" Alarm (VSM)", " Burning Hands (VS)", " Cloud of Daggers (VSM)", " Crown of Madness(VS)"];
 var mats = ["tiny bell & fine piece of silver wire", "-----", "a sliver of glass", "-----"];
 var spots = ["21", "22", "23", "24"];
 
@@ -54,6 +54,6 @@ function dropHandler(ev) {
   }
 
   if (!(document.getElementById("mat" + ev.target.id[0]) == null)) {
-    document.getElementById("mat" + ev.target.id[0]).innerText = mats[spellids.indexOf(hold)];
+    document.getElementById("mat" + ev.target.id[0]).innerText = mats[spells.indexOf(hold)];
   }
 }

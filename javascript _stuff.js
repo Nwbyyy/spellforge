@@ -48,8 +48,11 @@ function dropHandler(ev) {
   ev.target.firstChild.nodeValue = hold;
 
   for (x of document.getElementsByClassName("drop")) {
-    if (x.innerText.length == 1) {
-      document.getElementById("mat" + x.id).innerText = "----";
+    if (spells.includes(" " + x.innerText)) {
+      document.getElementById("mat" + x.id).innerText = mats[spells.indexOf(" " + x.innerText)];
+    }
+    else {
+      document.getElementById("mat" + x.id).innerText = "----"
     }
   }
 

@@ -56,7 +56,4 @@ function dropHandler(ev) {
     }
   }
 
-  if (!(document.getElementById("mat" + ev.target.id[0]) == null)) {
-    document.getElementById("mat" + ev.target.id[0]).innerText = mats[spells.indexOf(hold)];
-  }
 }

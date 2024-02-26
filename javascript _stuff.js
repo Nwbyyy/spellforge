@@ -1,4 +1,4 @@
-var spellids = ["alarm", "burning", "daggers", "crown"];
+var spellids = [" Alarm (VSM)", " Burning Hands (VS)", " Cloud of Daggers (VSM)", " Crown of Madness(VS)"];
 var mats = ["tiny bell & fine piece of silver wire", "-----", "a sliver of glass", "-----"];
 var spots = ["21", "22", "23", "24"];
 
@@ -46,11 +46,14 @@ function dropHandler(ev) {
   const hold = document.getElementById(data).firstChild.nodeValue;
   document.getElementById(data).firstChild.nodeValue = ev.target.firstChild.nodeValue;
   ev.target.firstChild.nodeValue = hold;
-  
-  if(!(document.getElementById("mat" + (spellids.indexOf(data)+1)) == null)) {
-    document.getElementById("mat" + (spellids.indexOf(data)+1)).innerText = mats[spellids.indexOf(data)];
+
+  for (x of document.getElementsByClassName("drop")) {
+    if (x.innerText.length == 1) {
+      document.getElementById("mat" + x.id).innerText = "----";
+    }
   }
-  else {
-    document.getElementById("mat" + data[1]).innerText = "-----";
+
+  if (!(document.getElementById("mat" + ev.target.id[0]) == null)) {
+    document.getElementById("mat" + ev.target.id[0]).innerText = mats[spellids.indexOf(hold)];
   }
 }
